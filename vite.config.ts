@@ -32,4 +32,14 @@ export default defineConfig({
     port: 3000,
   },
   root: './src',
+  build: {
+    outDir: resolve(__dirname, 'dist'),
+    emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        index: resolve(__dirname, 'src/index.html'),
+        login: resolve(__dirname, 'src/pages/login/index.html'),
+      },
+    },
+  },
 });
