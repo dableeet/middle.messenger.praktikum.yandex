@@ -1,12 +1,3 @@
 <!DOCTYPE html>
-{{#> layout styleHref="./index.scss" }}
-<form class="form form_login">
-  <h1 class="form__title">{{title}}</h1>
-  <div class="input-group form__input-group">
-    {{#each inputs}} {{> form-input input=.}} {{/each}}
-  </div>
-  <div class="button-group form__button-group">
-    {{#each buttons}} {{> button button=.}} {{/each}}
-  </div>
-</form>
+{{#> layout styleHref="../../assets/styles/forms.scss" }} {{> form form=.}}
 {{/layout}}

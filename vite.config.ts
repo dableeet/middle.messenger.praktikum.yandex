@@ -6,6 +6,7 @@ import { ViteAliases } from 'vite-aliases';
 
 import profileData from './src/pages/profile/data';
 import loginData from './src/pages/login/data';
+import signInData from './src/pages/sign-in/data';
 
 const pageData = {
   '/index.html': {
@@ -13,6 +14,7 @@ const pageData = {
   },
   '/pages/profile/index.html': profileData,
   '/pages/login/index.html': loginData,
+  '/pages/sign-in/index.html': signInData,
 };
 
 export default defineConfig({
@@ -39,6 +41,7 @@ export default defineConfig({
       input: {
         index: resolve(__dirname, 'src/index.html'),
         login: resolve(__dirname, 'src/pages/login/index.html'),
+        sign_in: resolve(__dirname, 'src/pages/sign-in/index.html'),
       },
     },
   },

@@ -1,1 +1,9 @@
-<div class="form"></div>
+<form class="form {{ form.class }}">
+  <h1 class="{{ form.titleClass }}">{{ form.title }}</h1>
+  <div class="input-group form__input-group">
+    {{#each form.inputs}} {{> form-input input=.}} {{/each}}
+  </div>
+  <div class="button-group form__button-group">
+    {{#each form.buttons}} {{> button button=.}} {{/each}}
+  </div>
+</form>

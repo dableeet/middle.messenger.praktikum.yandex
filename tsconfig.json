@@ -34,6 +34,12 @@
       ],
       "@assets/*": [
         "src/assets/*"
+      ],
+      "@button/*": [
+        "src/partials/button/*"
+      ],
+      "@styles/*": [
+        "src/partials/styles/*"
       ]
     }
   },

@@ -1,0 +1,19 @@
+.button {
+  all: unset;
+  cursor: pointer;
+  text-align: center;
+
+  &_submit {
+    width: 100%;
+    border-radius: 8px;
+    font-size: $text-m;
+    color: $white;
+    background-color: $royal-blue;
+    padding: 10px 0;
+  }
+
+  &_no-background {
+    font-size: $text-s;
+    color: $royal-blue;
+  }
+}

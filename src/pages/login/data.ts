@@ -1,5 +1,7 @@
 export default {
   title: 'Вход',
+  class: 'form_login',
+  titleClass: 'title form__title form__title_login',
   inputs: [
     {
       span: {
@@ -32,12 +34,12 @@ export default {
     {
       type: 'submit',
       innerText: 'Войти',
-      class: 'button button_submit',
+      class: 'button_submit button-group__button_mb',
     },
     {
       type: 'button',
       innerText: 'Нет аккаунта?',
-      class: 'button button_signup',
+      class: 'button_no-background',
     },
   ],
 };
