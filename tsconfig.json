@@ -40,6 +40,12 @@
       ],
       "@styles/*": [
         "src/partials/styles/*"
+      ],
+      "@scripts/*": [
+        "src/assets/scripts/*"
+      ],
+      "@icons/*": [
+        "src/assets/icons/*"
       ]
     }
   },

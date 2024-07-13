@@ -1,0 +1,23 @@
+@import '@/assets/styles/globals';
+@import '@/partials/styles/button';
+
+.info {
+  align-self: center;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $god-gray;
+  height: 164px;
+  row-gap: 14px;
+
+  &__title {
+    all: unset;
+    font: $error-title-font;
+  }
+
+  &__meaning {
+    font: $error-meaning-font;
+    margin-bottom: 54px;
+  }
+}

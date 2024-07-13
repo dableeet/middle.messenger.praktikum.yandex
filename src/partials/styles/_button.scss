@@ -16,4 +16,13 @@
     font-size: $text-s;
     color: $royal-blue;
   }
+
+  &_with_arrow {
+    width: 64px;
+    background-color: $alabaster;
+    border-right: 1px solid $gallery;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+  }
 }

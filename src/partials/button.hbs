@@ -1,3 +1,13 @@
-<button class="button {{ button.class }}" type="{{ button.type }}">
-  {{ button.innerText }}
+{{#if button.redirectPath}}
+<button
+  class="button {{ button.class }}"
+  type="{{ button.type }}"
+  data-path="{{ button.redirectPath }}"
+>
+  {{else}}
+  <button class="button {{ button.class }}" type="{{ button.type }}">
+    {{/if}}
+    {{#if @partial-block}} {{> @partial-block}}{{else}} {{ button.innerText
+    }}{{/if}}
+  </button>
 </button>

@@ -39,7 +39,8 @@ export default {
     {
       type: 'button',
       innerText: 'Нет аккаунта?',
-      class: 'button_no-background',
+      class: 'button_no-background button_redirect',
+      redirectPath: '/pages/sign-in/',
     },
   ],
 };
