@@ -1,0 +1,47 @@
+@import './normalize';
+
+@font-face {
+  font-family: 'Inter';
+  src: url('@assets/fonts/Inter/Inter-VariableFont_slnt,wght.ttf') format(ttf);
+}
+
+$white: #fff;
+$alabaster: #fbfbfb;
+$royal-blue: #3369f3;
+$god-gray: #1e1e1e;
+$dusty-gray: #999999;
+$gallery: #eaeaea;
+$red-orange: #ff2f2f;
+
+$form-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.14);
+
+$text-xs: 9px;
+$text-s: 11px;
+$text-m: 13px;
+$text-l: 20px;
+$text-xl: 40px;
+
+$font-family: 'Inter', sans-serif;
+$font-weight: 500;
+
+$form-title-font: $font-weight $text-l $font-family;
+$error-title-font: $font-weight $text-xl $font-family;
+$error-meaning-font: $font-weight $text-l $font-family;
+$input-label-font: $font-weight $text-xs $font-family;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $white;
+  font-family: 'Inter', sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  position: relative;
+}
