@@ -21,7 +21,8 @@
     "paths": {
       "@partials/*": ["src/partials/*"],
       "@/*": ["src/*"],
-      "@assets/*": ["src/assets/*"]
+      "@assets/*": ["src/assets/*"],
+      "@pages/*": ["src/pages/*"]
     }
   },
   "include": ["src", "src/pages"]

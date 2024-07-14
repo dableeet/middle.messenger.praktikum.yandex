@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 import handlebars from 'vite-plugin-handlebars';
+import { ViteAliases } from 'vite-aliases';
 
 import profileData from './src/pages/profile/data';
 import loginData from './src/pages/login/data';
@@ -23,6 +24,11 @@ export default defineConfig({
       context(pagePath: string) {
         return pageData[pagePath];
       },
+    }),
+    ViteAliases({
+      dir: 'src',
+      prefix: '@',
+      deep: false,
     }),
   ],
   server: {
