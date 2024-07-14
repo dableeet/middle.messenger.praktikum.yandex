@@ -42,6 +42,8 @@ export default defineConfig({
         index: resolve(__dirname, 'src/index.html'),
         login: resolve(__dirname, 'src/pages/login/index.html'),
         sign_in: resolve(__dirname, 'src/pages/sign-in/index.html'),
+        '500': resolve(__dirname, 'src/pages/error/500/index.html'),
+        '404': resolve(__dirname, 'src/pages/error/404/index.html'),
       },
     },
   },
