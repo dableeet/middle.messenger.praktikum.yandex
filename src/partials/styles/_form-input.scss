@@ -1,0 +1,42 @@
+.labeled-input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &__label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.2s;
+    opacity: 0;
+    color: $white;
+    pointer-events: none;
+  }
+
+  &__input {
+    border: none;
+    border-bottom: 1px solid $royal-blue;
+    outline: none;
+    padding: 5px 0;
+    &::placeholder {
+      font-size: $text-m;
+      color: $dusty-gray;
+      transition: 0.2s;
+    }
+
+    &:not(:placeholder-shown) + label,
+    &:focus + label {
+      top: -4px;
+      left: 0;
+      font: $input-label-font;
+      color: $dusty-gray;
+      opacity: 1;
+    }
+
+    &:focus {
+      &::placeholder {
+        color: $white;
+      }
+    }
+  }
+}

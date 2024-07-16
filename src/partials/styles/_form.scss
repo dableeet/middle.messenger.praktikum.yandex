@@ -1,0 +1,57 @@
+.form {
+  margin: 0 auto;
+  align-self: center;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 12px;
+  box-shadow: $form-shadow;
+  color: $god-gray;
+  padding: 48px 30px 28px;
+
+  &_login {
+    height: 460px;
+  }
+
+  &_reg {
+    height: 615px;
+  }
+
+  &__title {
+    all: unset;
+    text-align: center;
+    font: $form-title-font;
+
+    &_login {
+      flex-basis: 18%;
+    }
+
+    &_reg {
+      flex-basis: 13%;
+    }
+  }
+
+  &__input-group,
+  &__button-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input-group {
+    flex-grow: 1;
+    row-gap: 22px;
+  }
+
+  &__button-group {
+    align-items: center;
+  }
+}
+
+.button-group {
+  &__button {
+    &_mb {
+      margin-bottom: 16px;
+    }
+  }
+}
