@@ -24,7 +24,10 @@
       "@assets/*": ["src/assets/*"],
       "@pages/*": ["src/pages/*"],
       "@chat/*": ["src/pages/chat/*"]
-    }
+    },
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "strictNullChecks": true
   },
   "include": ["src", "src/pages"]
 }
