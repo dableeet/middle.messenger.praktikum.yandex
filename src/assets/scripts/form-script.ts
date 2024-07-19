@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
       target instanceof HTMLButtonElement &&
       target.classList.contains('button_redirect')
     ) {
-      window.location.pathname = target.dataset['path']!;
+      window.location.pathname = target.dataset.path!;
     }
   });
 });
