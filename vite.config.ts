@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 import handlebars from 'vite-plugin-handlebars';
+import hbsPrecompile from './vite-plugin-handlebars-precompile';
 import { ViteAliases } from 'vite-aliases';
 
 import loginData from './src/pages/login/data';
@@ -14,6 +15,7 @@ const pageData = {
 
 export default defineConfig({
   plugins: [
+    hbsPrecompile(),
     handlebars({
       partialDirectory: resolve(__dirname, 'src/partials'),
       context(pagePath: string) {

@@ -1,9 +1,9 @@
-<form class="form {{ form.class }}" name="form">
-  <h1 class="{{ form.titleClass }}">{{ form.title }}</h1>
+<form class="form {{ this.class }}" name="form">
+  <h1 class="{{ this.titleClass }}">{{ this.title }}</h1>
   <div class="input-group form__input-group">
-    {{#each form.inputs}} {{> form-input input=.}} {{/each}}
+    {{#each inputs}} {{> form-input input=.}} {{/each}}
   </div>
   <div class="button-group form__button-group">
-    {{#each form.buttons}} {{> button button=.}} {{/each}}
+    {{#each buttons}} {{> button button=.}} {{/each}}
   </div>
 </form>
