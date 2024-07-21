@@ -6,8 +6,9 @@ import button from '@partials/button.hbs';
 
 import data from './data';
 
-import styles from '@assets/styles/forms.styles.module.scss';
 import hashClasses from '@/utils/hash-classes';
+
+import styles from './styles.module.scss';
 
 Handlebars.registerPartial('form-input', input);
 Handlebars.registerPartial('button', button);

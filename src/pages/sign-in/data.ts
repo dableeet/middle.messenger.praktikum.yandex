@@ -106,7 +106,7 @@ export default {
     {
       type: 'button',
       innerText: 'Войти',
-      class: 'button button_no-background button_redirect',
+      class: 'button button_no-background',
       redirectPath: '/pages/login/',
     },
   ],
