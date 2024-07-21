@@ -1,7 +1,9 @@
 export default {
   title: 'Вход',
-  class: 'form_login',
+  class: 'form form_login',
   titleClass: 'title form__title form__title_login',
+  inputGroupClass: 'input-group form__input-group',
+  buttonGroupClass: 'button-group form__button-group',
   inputs: [
     {
       span: {
@@ -34,12 +36,12 @@ export default {
     {
       type: 'submit',
       innerText: 'Войти',
-      class: 'button_submit button-group__button_mb',
+      class: 'button button_submit button-group__button_mb',
     },
     {
       type: 'button',
       innerText: 'Нет аккаунта?',
-      class: 'button_no-background button_redirect',
+      class: 'button button_no-background button_redirect',
       redirectPath: '/pages/sign-in/',
     },
   ],

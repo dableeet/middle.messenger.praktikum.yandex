@@ -1,5 +1,5 @@
 <!doctype html>
-{{#> layout styleHref='./index.scss' }}
+{{#> layout styleHref="./index.scss"}}
 <nav class="nav">
   <ul class="list nav__list">
     <li class="list__elem">
@@ -24,4 +24,6 @@
     </li>
   </ul>
 </nav>
-{{/layout}}
+{{#*inline "scripts"}}
+<div hidden></div>
+{{/inline}} {{/layout}}

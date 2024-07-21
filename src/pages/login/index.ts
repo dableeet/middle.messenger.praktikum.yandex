@@ -6,13 +6,24 @@ import button from '@partials/button.hbs';
 
 import data from './data';
 
+import styles from '@assets/styles/forms.styles.module.scss';
+import hashClasses from '@/utils/hash-classes';
+
 Handlebars.registerPartial('form-input', input);
 Handlebars.registerPartial('button', button);
+
+const moduledData = hashClasses({ ...data }, styles);
 
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.container')!;
 
-  const result = formTemplate(data);
+  const hashedClassName = Array.from(container.classList)
+    .map((className) => styles[className])
+    .join(' ');
+
+  container.className = hashedClassName;
+
+  const result = formTemplate(moduledData);
 
   container.innerHTML = result;
 });

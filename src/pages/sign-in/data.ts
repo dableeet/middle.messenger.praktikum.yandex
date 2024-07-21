@@ -1,7 +1,9 @@
 export default {
   title: 'Регистрация',
-  class: 'form_reg',
+  class: 'form form_reg',
   titleClass: 'title form__title form__title_reg',
+  inputGroupClass: 'input-group form__input-group',
+  buttonGroupClass: 'button-group form__button-group',
   inputs: [
     {
       span: {
@@ -99,12 +101,12 @@ export default {
     {
       type: 'submit',
       innerText: 'Создать аккаунт',
-      class: 'button_submit button-group__button_mb',
+      class: 'button button_submit button-group__button_mb',
     },
     {
       type: 'button',
       innerText: 'Войти',
-      class: 'button_no-background button_redirect',
+      class: 'button button_no-background button_redirect',
       redirectPath: '/pages/login/',
     },
   ],
