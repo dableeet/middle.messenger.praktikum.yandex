@@ -1,0 +1,20 @@
+{{#> button class=this.returnButton.class type=this.returnButton.type }}
+<img
+  class="{{ this.returnButton.image.class }}"
+  src="{{ this.returnButton.image.src }}"
+  alt="{{ this.returnButton.image.alt }}"
+/>
+{{/button}}
+<div class="{{ this.class }}">
+  {{#> button class=this.avatarButton.class type=this.avatarButton.type}}
+  <img
+    class="{{ this.avatarButton.image.class }}"
+    src="{{ this.avatarButton.image.src }}"
+    alt="{{ this.avatarButton.image.alt }}"
+  />
+  {{/button}}
+  <h1 class="{{ this.title.class }}">{{ this.title.value }}</h1>
+  {{#each lists}}
+  {{> list list=.}}
+  {{/each}}
+</div>

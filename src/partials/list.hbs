@@ -1,0 +1,12 @@
+<ul class="{{ this.class }}">
+  {{#each items}}
+  <li class="{{ this.class }}">
+    {{#if this.button}}
+    {{>button class=this.button.class type=this.button.type innerText=this.button.innerText}}
+    {{else}}
+    <span class="{{ this.title.class }}">{{ this.title.innerText }}</span>
+    <span class="{{ this.value.class }}">{{ this.value.innerText }}</span>
+    {{/if}}
+  </li>
+  {{/each}}
+</ul>

@@ -1,2 +1,25 @@
 @import '@/assets/styles/globals';
 @import '@/partials/styles/button';
+@import '@/partials/styles/list';
+
+.profile {
+  align-self: center;
+  margin: -34px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__username {
+    font-size: $text-l;
+    font-weight: 600;
+    margin-bottom: 50px;
+  }
+
+  &__avatar-btn {
+    margin-bottom: 20px;
+  }
+
+  &__user-data-list {
+    margin-bottom: 40px;
+  }
+}

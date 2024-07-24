@@ -45,6 +45,10 @@ ul {
   list-style: none;
 }
 
+h1 {
+  all: unset;
+}
+
 .container {
   display: flex;
   height: 100vh;
