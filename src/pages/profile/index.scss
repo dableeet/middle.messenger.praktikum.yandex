@@ -1,0 +1,51 @@
+@import '@/assets/styles/globals';
+@import '@/partials/styles/button';
+
+.profile {
+  align-self: center;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__username {
+    font-size: $text-l;
+    font-weight: 600;
+    margin-bottom: 50px;
+  }
+
+  &__avatar-btn {
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    margin-bottom: 40px;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 510px;
+  font-size: $text-m;
+
+  &__item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 9px 0px;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $gallery;
+    }
+
+    &:last-child {
+      border-bottom: 1px solid transparent;
+    }
+
+    &__value {
+      color: $dusty-gray;
+    }
+  }
+}

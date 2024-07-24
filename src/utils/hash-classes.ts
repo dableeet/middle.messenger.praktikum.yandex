@@ -1,6 +1,9 @@
 import isObject from './is-object';
 
-export default function hashClasses(dataForRender, styles) {
+export default function hashClasses(
+  dataForRender: Record<string, unknown>,
+  styles: Record<string, string>,
+) {
   const dataWithHashedClasses = { ...dataForRender };
 
   for (let key in dataWithHashedClasses) {

@@ -12,17 +12,22 @@ $god-gray: #1e1e1e;
 $dusty-gray: #999;
 $gallery: #eaeaea;
 $red-orange: #ff2f2f;
+
 $form-shadow: 0 0 6px 0 rgb(0 0 0 / 14%);
+
 $text-xs: 9px;
 $text-s: 11px;
 $text-m: 13px;
-$text-l: 20px;
-$text-xl: 40px;
+$text-l: 16px;
+$text-xl: 20px;
+$text-xxl: 40px;
+
 $font-family: 'Inter', sans-serif;
 $font-weight: 500;
-$form-title-font: $font-weight $text-l $font-family;
-$error-title-font: $font-weight $text-xl $font-family;
-$error-meaning-font: $font-weight $text-l $font-family;
+
+$form-title-font: $font-weight $text-xl $font-family;
+$error-title-font: $font-weight $text-xxl $font-family;
+$error-meaning-font: $font-weight $text-xl $font-family;
 $input-label-font: $font-weight $text-xs $font-family;
 
 * {

@@ -10,19 +10,14 @@ import hashClasses from '@/utils/hash-classes';
 
 import styles from './styles.module.scss';
 
-Handlebars.registerPartial('form-input', input);
-Handlebars.registerPartial('button', button);
+Handlebars.registerPartial({ 'form-input': input, button });
 
 const moduledData = hashClasses({ ...data }, styles);
 
 document.addEventListener('DOMContentLoaded', () => {
-  const container = document.querySelector('.container')!;
+  const container = document.querySelector('#container')!;
 
-  const hashedClassName = Array.from(container.classList)
-    .map((className) => styles[className])
-    .join(' ');
-
-  container.className = hashedClassName;
+  container.classList.add(styles['container']);
 
   const result = formTemplate(moduledData);
 

@@ -1,4 +1,7 @@
 declare module '*.hbs' {
-  const content: (props: Record<string, unknown>) => string;
+  const content: (
+    context: Record<string, unknown>,
+    options?: RuntimeOptions,
+  ) => string;
   export default content;
 }
