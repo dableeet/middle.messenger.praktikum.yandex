@@ -21,5 +21,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const result = formTemplate(moduledData);
 
-  container.innerHTML = result;
+  container.insertAdjacentHTML('afterbegin', result);
 });

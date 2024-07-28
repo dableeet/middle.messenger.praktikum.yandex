@@ -1,3 +1,6 @@
+import avatarIcon from '@assets/icons/avatar-circle/avatar.svg';
+import arrowRoundedIcon from '@assets/icons/rounded-arrow/rounded-arrow.svg';
+
 const userData = {
   name: 'Иван',
   surname: 'Иванов',
@@ -8,110 +11,217 @@ const userData = {
 };
 
 export default {
-  class: 'profile',
-  returnButton: {
-    type: 'button',
-    class: 'button button_with_arrow',
-    image: {
-      src: '../../assets/icons/rounded-arrow/rounded-arrow.svg',
-      alt: 'arrow',
-    },
-  },
-  avatarButton: {
-    type: 'button',
-    class: 'button button_avatar profile__avatar-btn',
-    image: {
-      class: 'button_avatar__image',
-      src: '../../assets/icons/avatar-circle/avatar.svg',
-      alt: 'avatar',
-    },
-  },
-  title: {
-    class: 'profile__username',
-    value: userData.name,
-  },
-  lists: [
-    {
-      class: 'list profile__user-data-list',
-      items: [
+  modalsData: {
+    changeUserDataForm: {
+      title: '',
+      class: 'form form_update',
+      titleClass: '',
+      inputGroupClass: 'input-group form__input-group',
+      buttonGroupClass: 'button-group form__button-group',
+      inputs: [
         {
-          class: 'list__item',
-          title: {
-            class: 'list__item__title',
-            innerText: 'Почта',
+          span: {
+            class: 'labeled-input form__input-box',
           },
-          value: { class: 'list__item__value', innerText: userData.email },
+          label: {
+            class: 'labeled-input__label',
+          },
+          class: 'labeled-input__input',
+          type: 'email',
+          name: 'email',
+          id: 'email',
+          innerText: 'Почта',
         },
         {
-          class: 'list__item',
-          title: {
-            class: 'list__item__title',
-            innerText: 'Логин',
+          span: {
+            class: 'labeled-input form__input-box',
           },
-          value: { class: 'list__item__value', innerText: userData.login },
+          label: {
+            class: 'labeled-input__label',
+          },
+          class: 'labeled-input__input',
+          type: 'text',
+          name: 'login',
+          id: 'login',
+          innerText: 'Логин',
         },
         {
-          class: 'list__item',
-          title: {
-            class: 'list__item__title',
-            innerText: 'Имя',
+          span: {
+            class: 'labeled-input form__input-box',
           },
-          value: { class: 'list__item__value', innerText: userData.name },
+          label: {
+            class: 'labeled-input__label',
+          },
+          class: 'labeled-input__input',
+          type: 'text',
+          name: 'first_name',
+          id: 'fName',
+          innerText: 'Имя',
         },
         {
-          class: 'list__item',
-          title: {
-            class: 'list__item__title',
-            innerText: 'Фамилия',
+          span: {
+            class: 'labeled-input form__input-box',
           },
-          value: { class: 'list__item__value', innerText: userData.surname },
+          label: {
+            class: 'labeled-input__label',
+          },
+          class: 'labeled-input__input',
+          type: 'text',
+          name: 'second_name',
+          id: 'sName',
+          innerText: 'Фамилия',
         },
         {
-          class: 'list__item',
-          title: {
-            class: 'list__item__title',
-            innerText: 'Имя в чате',
+          span: {
+            class: 'labeled-input form__input-box',
           },
-          value: { class: 'list__item__value', innerText: userData.chatName },
+          label: {
+            class: 'labeled-input__label',
+          },
+          class: 'labeled-input__input',
+          type: 'text',
+          name: 'chat_name',
+          id: 'chName',
+          innerText: 'Имя в чате',
         },
         {
-          class: 'list__item',
-          title: {
-            class: 'list__item__title',
-            innerText: 'Телефон',
+          span: {
+            class: 'labeled-input form__input-box',
           },
-          value: { class: 'list__item__value', innerText: userData.phone },
+          label: {
+            class: 'labeled-input__label',
+          },
+          class: 'labeled-input__input',
+          type: 'tel',
+          name: 'phone',
+          id: 'phone',
+          innerText: 'Телефон',
+        },
+      ],
+      buttons: [
+        {
+          type: 'submit',
+          innerText: 'Создать аккаунт',
+          class: 'button button_submit button-group__button_mb',
+        },
+        {
+          type: 'button',
+          innerText: 'Войти',
+          class: 'button button_blue button_text-s',
+          redirectPath: '/pages/login/',
         },
       ],
     },
-    {
-      class: 'list profile__button-group',
-      items: [
-        {
-          class: 'list__item',
-          button: {
-            class: 'button button_blue button_text-m',
-            type: 'button',
-            innerText: 'Изменить данные',
-          },
-        },
-        {
-          class: 'list__item',
-          button: {
-            class: 'button button_blue button_text-m',
-            type: 'button',
-            innerText: 'Изменить пароль',
-          },
-        },
-        {
-          class: 'list__item',
-          button: {
-            class: 'button button_red button_text-m',
-            type: 'button',
-            innerText: 'Выйти',
-          },
-        },
-      ],
+  },
+  profileData: {
+    class: 'profile',
+    returnButton: {
+      type: 'button',
+      class: 'button button_with_arrow',
+      image: {
+        src: arrowRoundedIcon,
+        alt: 'arrow',
+      },
     },
-  ],
+    avatarButton: {
+      type: 'button',
+      class: 'button button_avatar profile__avatar-btn',
+      image: {
+        class: 'button_avatar__image',
+        src: avatarIcon,
+        alt: 'avatar',
+      },
+    },
+    title: {
+      class: 'profile__username',
+      value: userData.name,
+    },
+    lists: [
+      {
+        class: 'list profile__user-data-list',
+        items: [
+          {
+            class: 'list__item',
+            title: {
+              class: 'list__item__title',
+              innerText: 'Почта',
+            },
+            value: { class: 'list__item__value', innerText: userData.email },
+          },
+          {
+            class: 'list__item',
+            title: {
+              class: 'list__item__title',
+              innerText: 'Логин',
+            },
+            value: { class: 'list__item__value', innerText: userData.login },
+          },
+          {
+            class: 'list__item',
+            title: {
+              class: 'list__item__title',
+              innerText: 'Имя',
+            },
+            value: { class: 'list__item__value', innerText: userData.name },
+          },
+          {
+            class: 'list__item',
+            title: {
+              class: 'list__item__title',
+              innerText: 'Фамилия',
+            },
+            value: { class: 'list__item__value', innerText: userData.surname },
+          },
+          {
+            class: 'list__item',
+            title: {
+              class: 'list__item__title',
+              innerText: 'Имя в чате',
+            },
+            value: { class: 'list__item__value', innerText: userData.chatName },
+          },
+          {
+            class: 'list__item',
+            title: {
+              class: 'list__item__title',
+              innerText: 'Телефон',
+            },
+            value: { class: 'list__item__value', innerText: userData.phone },
+          },
+        ],
+      },
+      {
+        class: 'list profile__button-group',
+        items: [
+          {
+            class: 'list__item',
+            button: {
+              class: 'button button_blue button_text-m',
+              type: 'button',
+              innerText: 'Изменить данные',
+              actionType: 'openModal',
+            },
+          },
+          {
+            class: 'list__item',
+            button: {
+              class: 'button button_blue button_text-m',
+              type: 'button',
+              innerText: 'Изменить пароль',
+              actionType: 'openModal',
+            },
+          },
+          {
+            class: 'list__item',
+            button: {
+              class: 'button button_red button_text-m',
+              type: 'button',
+              innerText: 'Выйти',
+              actionType: 'logout',
+            },
+          },
+        ],
+      },
+    ],
+  },
 };

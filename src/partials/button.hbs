@@ -4,10 +4,23 @@
   type="{{ this.type }}"
   data-path="{{ this.redirectPath }}"
 >
-  {{else}}
-  <button class="{{ this.class }}" type="{{ this.type }}">
-    {{/if}}
-    {{#if @partial-block}} {{> @partial-block}}{{else}} {{ this.innerText
-    }}{{/if}}
-  </button>
+  {{#if @partial-block}} {{> @partial-block}}{{else}} {{ this.innerText
+  }}{{/if}}
 </button>
+{{else}}
+{{#if this.actionType}}
+<button
+  class="{{ this.class }}"
+  type="{{ this.type }}"
+  data-action="{{ this.actionType }}"
+>
+  {{#if @partial-block}} {{> @partial-block}}{{else}} {{ this.innerText }}
+  {{/if}}
+</button>
+{{else}}
+<button class="{{ this.class }}" type="{{ this.type }}">
+  {{#if @partial-block}} {{> @partial-block}}{{else}} {{ this.innerText }}
+  {{/if}}
+</button>
+{{/if}}
+{{/if}}
