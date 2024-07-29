@@ -9,9 +9,15 @@
   box-shadow: $form-shadow;
   color: $god-gray;
   padding: 48px 30px 28px;
+  background-color: $white;
 
   &_login {
     height: 460px;
+  }
+
+  &_update,
+  &_update_password {
+    height: 440px;
   }
 
   &_reg {

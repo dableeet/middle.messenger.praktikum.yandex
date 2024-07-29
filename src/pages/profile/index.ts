@@ -5,7 +5,7 @@ import data from './data';
 import hashClasses from '@/utils/hash-classes';
 
 import profileLayout from './profile.layout.hbs';
-import formLayut from '@partials/form.hbs';
+import formLayout from '@partials/form.hbs';
 
 import button from '@partials/button.hbs';
 import arrow from '@assets/icons/rounded-arrow/rounded-arrow.hbs';
@@ -13,61 +13,82 @@ import list from '@partials/list.hbs';
 import input from '@partials/form-input.hbs';
 
 import styles from './styles.module.scss';
-import createPortal from '@/utils/create-portal';
+import createDomNode from '@/utils/create-dom-node';
 
 Handlebars.registerPartial({ arrow, button, list, 'form-input': input });
 
 const moduledData = hashClasses({ ...data }, styles);
 
-const actions = {
-  openModal: (
-    modalContainer: HTMLDivElement,
-    modalContainerClassName: string,
-    className: string,
-    styles: Record<string, string>,
-  ) => {
-    const modal = document.createElement('div');
+const portal = createDomNode(
+  'div',
+  'portal',
+  `${styles['portal']} ${styles['portal_close']}`,
+);
 
-    const modalsData = moduledData['modalsData'] as Record<string, unknown>;
+const modal = createDomNode('div', 'modal', styles['modal']);
 
-    const from = formLayut(
-      modalsData['changeUserDataForm'] as Record<string, unknown>,
-    );
+const closeModal = (event: MouseEvent | KeyboardEvent) => {
+  if (
+    (event.target instanceof HTMLDivElement && event.target.id === modal.id) ||
+    (event instanceof KeyboardEvent && event.key === 'Escape')
+  ) {
+    portal.classList.toggle(styles['portal_close']);
 
-    modal.setAttribute('class', styles[className]);
+    modal.firstChild && modal.removeChild(modal.firstChild);
+    portal.firstChild && portal.removeChild(portal.firstChild);
 
-    modalContainer.classList.toggle(styles[`${modalContainerClassName}_close`]);
+    modal.removeEventListener('click', closeModal);
+    document.removeEventListener('keyup', closeModal);
+  } else {
+    return;
+  }
+};
 
-    modal.insertAdjacentHTML('afterbegin', from);
+const openModal = (innerHTML: string) => {
+  portal.classList.toggle(styles['portal_close']);
 
-    modalContainer.appendChild(modal);
-  },
+  modal.insertAdjacentHTML('afterbegin', innerHTML);
 
-  closeModal: () => {},
+  portal.appendChild(modal);
+
+  modal.addEventListener('click', closeModal);
+  document.addEventListener('keyup', closeModal);
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  const portal = createPortal(`${styles['portal']} ${styles['portal_close']}`);
+  document.querySelector('body')?.appendChild(portal);
 
   const container = document.querySelector('#container')!;
 
   container.classList.add(styles['container']);
 
-  const result = profileLayout(
+  const profileHTML = profileLayout(
     moduledData['profileData'] as Record<string, unknown>,
   );
 
-  container.insertAdjacentHTML('afterbegin', result);
+  const modalsData = moduledData['modalsData'] as Record<string, unknown>;
+
+  const updateUserDataFormHTML = formLayout(
+    modalsData['updateUserDataForm'] as Record<string, unknown>,
+  );
+
+  const updateUserPasswordFormHTML = formLayout(
+    modalsData['updateUserPasswordForm'] as Record<string, unknown>,
+  );
+
+  container.insertAdjacentHTML('afterbegin', profileHTML);
 
   container.addEventListener('click', (event) => {
     const { target } = event;
 
     if (target instanceof HTMLButtonElement && target.dataset.action) {
-      const actionName = target.dataset.action as keyof typeof actions;
+      if (target.dataset.action === 'updateUserData') {
+        openModal(updateUserDataFormHTML);
+      }
 
-      const callback = actions[actionName];
-
-      callback(portal, 'portal', 'modal', styles);
+      if (target.dataset.action === 'updateUserPassword') {
+        openModal(updateUserPasswordFormHTML);
+      }
     }
   });
 });

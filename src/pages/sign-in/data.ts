@@ -1,4 +1,5 @@
 export default {
+  name: 'form',
   title: 'Регистрация',
   class: 'form form_reg',
   titleClass: 'title form__title form__title_reg',

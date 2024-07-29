@@ -1,4 +1,5 @@
 export default {
+  name: 'form',
   title: 'Вход',
   class: 'form form_login',
   titleClass: 'title form__title form__title_login',

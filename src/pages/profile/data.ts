@@ -12,10 +12,9 @@ const userData = {
 
 export default {
   modalsData: {
-    changeUserDataForm: {
-      title: '',
+    updateUserDataForm: {
+      name: 'updateUserDataForm',
       class: 'form form_update',
-      titleClass: '',
       inputGroupClass: 'input-group form__input-group',
       buttonGroupClass: 'button-group form__button-group',
       inputs: [
@@ -31,6 +30,7 @@ export default {
           name: 'email',
           id: 'email',
           innerText: 'Почта',
+          value: userData.email,
         },
         {
           span: {
@@ -44,6 +44,7 @@ export default {
           name: 'login',
           id: 'login',
           innerText: 'Логин',
+          value: userData.login,
         },
         {
           span: {
@@ -57,6 +58,7 @@ export default {
           name: 'first_name',
           id: 'fName',
           innerText: 'Имя',
+          value: userData.name,
         },
         {
           span: {
@@ -70,6 +72,7 @@ export default {
           name: 'second_name',
           id: 'sName',
           innerText: 'Фамилия',
+          value: userData.surname,
         },
         {
           span: {
@@ -83,6 +86,7 @@ export default {
           name: 'chat_name',
           id: 'chName',
           innerText: 'Имя в чате',
+          value: userData.chatName,
         },
         {
           span: {
@@ -96,19 +100,68 @@ export default {
           name: 'phone',
           id: 'phone',
           innerText: 'Телефон',
+          value: userData.phone,
         },
       ],
       buttons: [
         {
           type: 'submit',
-          innerText: 'Создать аккаунт',
-          class: 'button button_submit button-group__button_mb',
+          innerText: 'Сохранить',
+          class: 'button button_submit',
+        },
+      ],
+    },
+    updateUserPasswordForm: {
+      name: 'updateUserPasswordForm',
+      class: 'form form_update_password',
+      inputGroupClass: 'input-group form__input-group',
+      buttonGroupClass: 'button-group form__button-group',
+      inputs: [
+        {
+          span: {
+            class: 'labeled-input form__input-box',
+          },
+          label: {
+            class: 'labeled-input__label',
+          },
+          class: 'labeled-input__input',
+          type: 'password',
+          name: 'oldPassword',
+          id: 'oldPassword',
+          innerText: 'Старый пароль',
         },
         {
-          type: 'button',
-          innerText: 'Войти',
-          class: 'button button_blue button_text-s',
-          redirectPath: '/pages/login/',
+          span: {
+            class: 'labeled-input form__input-box',
+          },
+          label: {
+            class: 'labeled-input__label',
+          },
+          class: 'labeled-input__input',
+          type: 'password',
+          name: 'password',
+          id: 'password',
+          innerText: 'Новый пароль',
+        },
+        {
+          span: {
+            class: 'labeled-input form__input-box',
+          },
+          label: {
+            class: 'labeled-input__label',
+          },
+          class: 'labeled-input__input',
+          type: 'password',
+          name: 'checkPassword',
+          id: 'checkPassword',
+          innerText: 'Повторите новый пароль',
+        },
+      ],
+      buttons: [
+        {
+          type: 'submit',
+          innerText: 'Сохранить',
+          class: 'button button_submit',
         },
       ],
     },
@@ -199,7 +252,7 @@ export default {
               class: 'button button_blue button_text-m',
               type: 'button',
               innerText: 'Изменить данные',
-              actionType: 'openModal',
+              actionType: 'updateUserData',
             },
           },
           {
@@ -208,7 +261,7 @@ export default {
               class: 'button button_blue button_text-m',
               type: 'button',
               innerText: 'Изменить пароль',
-              actionType: 'openModal',
+              actionType: 'updateUserPassword',
             },
           },
           {
