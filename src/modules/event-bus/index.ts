@@ -6,13 +6,13 @@ class EventBus {
     this.listeners = {};
   }
 
-  on: EventBusMethod = (event, callback) => {
+  on: EventBusMethod['cb'] = (event, callback) => {
     this._chekListeners(event);
 
     this.listeners[event].push(callback);
   };
 
-  off: EventBusMethod = (event, callback) => {
+  off: EventBusMethod['cb'] = (event, callback) => {
     this._checkEventError(event);
 
     this.listeners[event] = this.listeners[event].filter(
@@ -20,7 +20,7 @@ class EventBus {
     );
   };
 
-  emit = (event: string, ...args: unknown[]) => {
+  emit: EventBusMethod['args'] = (event, ...args) => {
     this._checkEventError(event);
 
     this.listeners[event].forEach((listener) => listener(...args));

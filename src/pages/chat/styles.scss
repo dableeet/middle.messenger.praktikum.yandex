@@ -1,7 +1,151 @@
 @import '@/assets/styles/globals';
 @import '@/partials/styles/button';
 
-.chat {
-  align-self: center;
-  margin: 0 auto;
+.chats,
+.tools,
+.list,
+.messages {
+  display: flex;
+  flex-direction: column;
+}
+
+.chats {
+  width: 310px;
+  border-right: $border-gallery;
+
+  &__list {
+    overflow: scroll;
+  }
+}
+
+.tools {
+  padding: 21px 10px 15px;
+  row-gap: 24px;
+
+  &__profile-btn {
+    align-self: flex-end;
+  }
+}
+
+.search-tool {
+  position: relative;
+
+  &__input {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: $gallery;
+    color: $god-gray;
+    padding: 10px 0 10px 126px;
+    font-size: 12px;
+    transition: padding 0.3s ease;
+
+    &:not(:placeholder-shown),
+    &:focus {
+      padding-left: 34px;
+      &::placeholder {
+        color: transparent;
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    left: 39%;
+    top: 50%;
+    transform: translate(-39%, -50%);
+    transition: left 0.3s ease;
+
+    .search-tool__input:not(:placeholder-shown) ~ &,
+    .search-tool__input:focus ~ & {
+      left: 10px;
+      transform: translate(0, -50%);
+    }
+  }
+}
+
+.chat-prev {
+  border-top: $border-gallery;
+  padding: 12px 10px;
+  display: flex;
+  column-gap: 10px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $message-prev-bg;
+  }
+
+  &:last-of-type {
+    border-bottom: $border-gallery;
+  }
+
+  &__avatar {
+    border-radius: 100%;
+    width: 47px;
+    height: 47px;
+    background-color: $gallery;
+  }
+
+  &__info {
+    color: $dusty-gray;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+
+    &_first-row,
+    &_second-row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &_first-row {
+      align-items: center;
+    }
+
+    &_second-row {
+      flex-grow: 1;
+    }
+
+    &__name {
+      color: $god-gray;
+      font-size: $text-m;
+      font-weight: 600;
+    }
+
+    &__date {
+      font-size: $text-xs;
+    }
+
+    &__message-prev {
+      font-size: 12px;
+
+      &_self {
+        color: $god-gray;
+      }
+    }
+
+    &__message-count {
+      width: 20px;
+      height: 20px;
+      background-color: $royal-blue;
+      border-radius: 100%;
+      color: $white;
+      font-size: $text-s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: flex-end;
+    }
+  }
+}
+
+.messages {
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  font-size: 12px;
+  color: $dusty-gray;
 }

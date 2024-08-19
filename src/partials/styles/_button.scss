@@ -12,6 +12,14 @@
     padding: 10px 0;
   }
 
+  &_profile {
+    color: $dusty-gray;
+    font-size: 12px;
+    width: 66px;
+    justify-content: space-between;
+    display: flex;
+  }
+
   &_blue {
     color: $royal-blue;
   }
@@ -31,7 +39,7 @@
   &_with_arrow {
     width: 64px;
     background-color: $alabaster;
-    border-right: 1px solid $gallery;
+    border-right: $border-gallery;
     position: absolute;
     bottom: 0;
     top: 0;

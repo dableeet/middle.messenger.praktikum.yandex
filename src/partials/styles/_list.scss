@@ -12,7 +12,7 @@
     padding: 9px 0px;
 
     &:not(:last-child) {
-      border-bottom: 1px solid $gallery;
+      border-bottom: $border-gallery;
     }
 
     &:last-child {

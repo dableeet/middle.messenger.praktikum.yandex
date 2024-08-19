@@ -1,6 +1,90 @@
 <!doctype html>
 {{#> layout styleHref='./styles.scss' }}
-<div class="chat">Страница в разработке</div>
+
+<div class="chats">
+  <div class="tools chats__tools">
+    <button class="button button_profile tools__profile-btn">
+      Профиль
+      <img
+        src="../../assets/icons/arrow-forward/arrow-forward.svg"
+        alt="arrow"
+      />
+    </button>
+    <div class="search-tool tools__search-tool">
+      <input type="text" class="search-tool__input" placeholder="Поиск" />
+      <img
+        class="search-tool__icon"
+        src="../../assets/icons/search-icon/search-icon.svg"
+        alt="search"
+      />
+    </div>
+  </div>
+  <ul class="list chats__list">
+    <li class="chat-prev list__chat-prev">
+      <div class="chat-prev__avatar"></div>
+      <div class="chat-prev__info">
+        <div class="chat-prev__info_first-row">
+          <h5 class="chat-prev__info__name">Андрей</h5>
+          <span class="chat-prev__info__date">10:49</span>
+        </div>
+        <div class="chat-prev__info_second-row">
+          <div class="chat-prev__info__message-prev">
+            Lorem ipsum dolor sit amet
+          </div>
+          <div class="chat-prev__info__message-count"><span>2</span></div>
+        </div>
+      </div>
+    </li>
+    <li class="chat-prev list__chat-prev">
+      <div class="chat-prev__avatar"></div>
+      <div class="chat-prev__info">
+        <div class="chat-prev__info_first-row">
+          <h5 class="chat-prev__info__name">1, 2, 3</h5>
+          <span class="chat-prev__info__date">Пн</span>
+        </div>
+        <div class="chat-prev__info_second-row">
+          <div class="chat-prev__info__message-prev">
+            Lorem ipsum dolor sit amet
+          </div>
+          <div class="chat-prev__info__message-count"><span>3</span></div>
+        </div>
+      </div>
+    </li>
+    <li class="chat-prev list__chat-prev">
+      <div class="chat-prev__avatar"></div>
+      <div class="chat-prev__info">
+        <div class="chat-prev__info_first-row">
+          <h5 class="chat-prev__info__name">Design Destroyer</h5>
+          <span class="chat-prev__info__date">12 Ноя 1997</span>
+        </div>
+        <div class="chat-prev__info_second-row">
+          <div class="chat-prev__info__message-prev">
+            <span class="chat-prev__info__message-prev_self">Вы:&nbsp;</span
+            >Lorem ipsum dolor sit amet
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="chat-prev list__chat-prev">
+      <div class="chat-prev__avatar"></div>
+      <div class="chat-prev__info">
+        <div class="chat-prev__info_first-row">
+          <h5 class="chat-prev__info__name">1, 2, 3</h5>
+          <span class="chat-prev__info__date">Пн</span>
+        </div>
+        <div class="chat-prev__info_second-row">
+          <div class="chat-prev__info__message-prev">
+            Lorem ipsum dolor sit amet
+          </div>
+          <div class="chat-prev__info__message-count"><span>12</span></div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="messages">
+  <span class="messages__no-chat">Выберите чат чтобы отправить сообщение</span>
+</div>
 {{#*inline "scripts"}}
-<div hidden></div>
+<script type="module" src="./index.ts"></script>
 {{/inline}} {{/layout}}
