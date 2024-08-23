@@ -21,7 +21,7 @@
   </div>
   <ul class="list chat-panel__list">
     <li class="chat-prev list__chat-prev">
-      <div class="chat-prev__avatar"></div>
+      <div class="avatar chat-prev__avatar"></div>
       <div class="chat-prev__info">
         <div class="chat-prev__info_first-row">
           <h5 class="chat-prev__info__name">Андрей</h5>
@@ -39,7 +39,7 @@
       </div>
     </li>
     <li class="chat-prev list__chat-prev">
-      <div class="chat-prev__avatar"></div>
+      <div class="avatar chat-prev__avatar"></div>
       <div class="chat-prev__info">
         <div class="chat-prev__info_first-row">
           <h5 class="chat-prev__info__name">1, 2, 3</h5>
@@ -56,8 +56,8 @@
         </div>
       </div>
     </li>
-    <li class="chat-prev list__chat-prev">
-      <div class="chat-prev__avatar"></div>
+    <li class="chat-prev chat-prev_active list__chat-prev">
+      <div class="avatar chat-prev__avatar"></div>
       <div class="chat-prev__info">
         <div class="chat-prev__info_first-row">
           <h5 class="chat-prev__info__name">Design Destroyer</h5>
@@ -75,7 +75,7 @@
       </div>
     </li>
     <li class="chat-prev list__chat-prev">
-      <div class="chat-prev__avatar"></div>
+      <div class="avatar chat-prev__avatar"></div>
       <div class="chat-prev__info">
         <div class="chat-prev__info_first-row">
           <h5 class="chat-prev__info__name">1, 2, 3</h5>
@@ -94,8 +94,35 @@
     </li>
   </ul>
 </div>
-<div class="chat chat_no-chat">
-  <p>Выберите чат чтобы отправить сообщение</p>
+<div class="chat chat_active">
+  <header class="chat__header">
+    <div class="chat__chat-info">
+      <div class="avatar chat__avatar"></div>
+      <p class="chat__chat-name">Design Destroyer</p>
+    </div>
+    <button class="button button_no-background chat__more-btn" type="button">
+      <img src="../../assets/icons/more-dots/dots-vert.svg" alt="more" />
+    </button>
+  </header>
+  <section class="chat__content"></section>
+  <form name="chat-form" class="chat__form">
+    <label for="file" class="chat__file-btn">
+      <img src="../../assets/icons/attach/clip.svg" alt="clip" />
+    </label>
+    <input type="file" name="file" id="file" hidden />
+    <textarea
+      placeholder="Сообщение"
+      rows="1"
+      name="message"
+      class="chat__message-input"
+    ></textarea>
+    <button class="button chat__send-btn" type="submit">
+      <img
+        src="../../assets/icons/rounded-arrow/rounded-arrow.svg"
+        alt="arrow"
+      />
+    </button>
+  </form>
 </div>
 {{#*inline "scripts"}}
 <script type="module" src="./index.ts"></script>

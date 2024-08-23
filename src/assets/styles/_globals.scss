@@ -5,6 +5,30 @@
   src: url('@assets/fonts/Inter/Inter-VariableFont_slnt,wght.ttf') format(ttf);
 }
 
+@mixin pseudo-border(
+  $position: 'bottom',
+  $position-shift: 0,
+  $width: 0,
+  $border-width: 1px,
+  $border-color: $gallery
+) {
+  @if $position == 'bottom' {
+    bottom: $position-shift;
+  }
+
+  @if $position == 'top' {
+    top: $position-shift;
+  }
+
+  content: '';
+  position: absolute;
+  left: 50%; // центруем псевдоэлемент
+  width: calc(100% - $width); // длина границы
+  height: $border-width; // толщина границы
+  background-color: $border-color;
+  transform: translateX(-50%);
+}
+
 $white: #fff;
 $alabaster: #fbfbfb;
 $royal-blue: #3369f3;

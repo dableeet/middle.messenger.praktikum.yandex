@@ -1,26 +1,43 @@
 @import '@/assets/styles/globals';
 @import '@/partials/styles/button';
 
-.chats,
+@mixin chat-name {
+  color: $god-gray;
+  font-size: $text-m;
+  font-weight: 600;
+}
+
+.chat-panel,
 .tools,
 .list,
-.messages {
+.chat {
   display: flex;
   flex-direction: column;
 }
 
-.chats {
+.avatar {
+  border-radius: 100%;
+  background-color: $gallery;
+}
+
+.chat-panel {
   width: 310px;
   border-right: $border-gallery;
 
   &__list {
     overflow: scroll;
+    flex-grow: 1;
   }
 }
 
 .tools {
   padding: 21px 10px 15px;
   row-gap: 24px;
+  position: relative;
+
+  &::after {
+    @include pseudo-border('bottom', -1px, 20px);
+  }
 
   &__profile-btn {
     align-self: flex-end;
@@ -66,27 +83,47 @@
 }
 
 .chat-prev {
-  border-top: $border-gallery;
+  border-top: 1px solid transparent;
+  position: relative;
   padding: 12px 10px;
   display: flex;
   column-gap: 10px;
-  transition: background-color 0.3s ease;
+
+  &::after {
+    @include pseudo-border('bottom', -1px, 20px);
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    top: 2.5px;
+    bottom: 2.5px;
+    background-color: $message-prev-bg;
+    z-index: -111;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+  }
 
   &:hover {
     cursor: pointer;
-    background-color: $message-prev-bg;
+
+    &::before {
+      opacity: 1;
+    }
   }
 
-  &:last-of-type {
-    border-bottom: $border-gallery;
+  &_active {
+    &::before {
+      opacity: 1;
+    }
   }
 
   &__avatar {
-    border-radius: 100%;
     width: 47px;
     min-width: 47px;
     height: 47px;
-    background-color: $gallery;
   }
 
   &__info {
@@ -111,9 +148,7 @@
     }
 
     &__name {
-      color: $god-gray;
-      font-size: $text-m;
-      font-weight: 600;
+      @include chat-name;
     }
 
     &__date {
@@ -150,10 +185,97 @@
   }
 }
 
-.messages {
-  align-items: center;
-  justify-content: center;
+.chat {
   flex-grow: 1;
   font-size: 12px;
   color: $dusty-gray;
+  padding: 0 20px;
+
+  &_no-chat {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &_active {
+    align-items: normal;
+    justify-content: space-between;
+  }
+
+  &__header {
+    padding: 10px 10px 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: $border-gallery;
+  }
+
+  &__chat-info {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+  }
+
+  &__avatar {
+    width: 34px;
+    min-width: 34px;
+    height: 34px;
+  }
+
+  &__chat-name {
+    @include chat-name;
+  }
+
+  &__more-btn {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+
+    &:hover {
+      //!TODO
+    }
+  }
+
+  &__form {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    justify-content: space-between;
+    border-top: $border-gallery;
+    column-gap: 10px;
+  }
+
+  &__file-btn,
+  &__more-btn,
+  &__send-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__send-btn {
+    img {
+      rotate: 0.5turn;
+    }
+  }
+
+  &__message-input {
+    flex-grow: 1;
+    border-radius: 30px;
+    border: none;
+    resize: none;
+    outline: none;
+    background-color: $gallery;
+    padding: 10px 20px;
+
+    &::placeholder {
+      font-size: 12px;
+      font-weight: 500;
+      color: $dusty-gray;
+    }
+  }
+
+  &__content {
+    overflow: scroll;
+    flex-grow: 1;
+  }
 }
