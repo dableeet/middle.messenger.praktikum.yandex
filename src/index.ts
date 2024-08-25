@@ -22,11 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
     </li>
     <li class="list__elem">
       <a class="link list__link" href="/pages/profile/"
-        >Профиль (в разработке)</a
+        >Профиль</a
       >
     </li>
     <li class="list__elem">
-      <a class="link list__link" href="/pages/chat/">Чат (в разработке)</a>
+      <a class="link list__link" href="/pages/chat/">Чат</a>
     </li>
   </ul>
 </nav>
