@@ -10,9 +10,10 @@ export type Props = {
   };
 };
 
-export type MetaData = Record<string, unknown>;
+type GenericObj<T> = Record<string, T>;
 
-export type Children = Record<string, Block>;
+export type MetaData = GenericObj<unknown>;
+export type Children = GenericObj<Block>;
 
 export type Compile = (
   context: Record<string, unknown>,

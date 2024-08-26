@@ -35,7 +35,7 @@ abstract class Block {
       this.props = this._makePropsProxy(props);
     } else {
       this._id = makeUUID();
-      this.props = this._makePropsProxy({ ...props, __id: this._id });
+      this.props = this._makePropsProxy({ ...props, id: this._id });
     }
 
     this.eventBus = () => eventBus;
@@ -139,11 +139,8 @@ abstract class Block {
   private _render() {
     const block = this.render();
     this._removeEvents();
-
     this._element.innerHTML = '';
-
     this._element.appendChild(block);
-
     this._addEvents();
   }
 
@@ -170,7 +167,7 @@ abstract class Block {
     });
   }
 
-  private _createDocumentElement<T>(tagName: string) {
+  private _createDocumentElement<T>(tagName: string): T {
     const element = document.createElement(tagName);
     this._id && element.setAttribute('data-id', this._id);
     return element as T;
@@ -199,13 +196,13 @@ abstract class Block {
 
   show() {
     if (this.element) {
-      this.getContent()!.style.display = 'block';
+      this.getContent().style.display = 'block';
     }
   }
 
   hide() {
     if (this.element) {
-      this.getContent()!.style.display = 'none';
+      this.getContent().style.display = 'none';
     }
   }
 }
